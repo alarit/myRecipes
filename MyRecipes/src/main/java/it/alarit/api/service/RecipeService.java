@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.alarit.api.exception.NoElementsException;
 import it.alarit.api.model.Recipe;
 import it.alarit.api.repository.RecipeRepository;
 
@@ -23,15 +24,15 @@ public class RecipeService{
 	}
 	
 	public Recipe save(final Recipe r) throws Exception{
-		if(r == null) throw new NullPointerException();
+		if(r == null) throw new NoElementsException();
 		return recipeRepository.save(r);
 	}
 	
 	public void delete(final Long id) throws Exception{
-		if(id == null) throw new NullPointerException();
+		if(id == null) throw new NoElementsException();
 		Recipe r = findById(id);
 		
-		if(r == null) throw new NullPointerException();
+		if(r == null) throw new NoElementsException();
 		recipeRepository.delete(r);
 	}
 	

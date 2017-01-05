@@ -5,11 +5,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import it.alarit.api.exception.NoElementsException;
+
 public abstract class AbstractApiController{
 	
-	@ExceptionHandler(NullPointerException.class)
+	@ExceptionHandler({NullPointerException.class, NoElementsException.class})
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public @ResponseBody String handleNullPointerException(NullPointerException e) {
+	public @ResponseBody String handleNullPointerException(Exception e) {
 		return getErrMsg(HttpStatus.NO_CONTENT, e.getMessage());
 	}
 	
