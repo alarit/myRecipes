@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to MyRecipes!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+	<link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="../resources/css/recipe.css" rel="stylesheet" media="screen"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="../resources/js/bootstrap.min.js"></script>
+  	<script src="../resources/js/bootstrap3-typeahead.min.js"></script>
+  	<script src="../resources/js/recipeService.js"></script>
+  	<script src="../resources/js/recipeController.js"></script>
+  	<script src="../resources/js/general.js"></script>
+</head>
+
+<body background="http://www.expoluzrd.com/ori/4.bp.blogspot.com/-vEzavqEHKOE/T7eHApsgvDI/AAAAAAAADFI/eKwoahAujEk/s1600/ButterflyPaper20.png">
+
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <span class="glyphicon glyphicon-home"></span>&nbsp;Welcome to MyRecipes
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+	
+	<div class="container col-md-12 center" style="margin-bottom:20px">
+	    <p>In this page you can look for all your recipes or add new ones!</p>
+	</div>
+	
+	<div class="container col-md-6">
+			<input type="text" class="typeahead col-lg-3" data-provide="typeahead">
+	    	<select id="recipeFilter" class="custom-select">
+				  <option value="0" selected>By name</option>
+				  <option value="1">By recipe</option>
+			</select>
+	</div>
+	<div class="container col-md-6 center">
+	    <a id="newButton" href="#" class="btn btn-info">
+	    	<span class="glyphicon glyphicon-plus"></span>&nbsp;New
+	    </a>
+	</div>
+	
+	<div class="container col-md-12 mainMenu">
+		<div class="container col-md-1" style="text-align:right">
+			<label>Name</label>
+		</div>
+		<div class="container col-md-4">
+	    	<input id="recipeName" class="form-control" type="text">
+	    </div>
+	    <div class="container col-md-2" style="text-align:right">
+			<label>Url</label>
+		</div>
+	    <div class="container col-md-3">
+	    	<input id="recipeUrl" class="form-control" type="text">
+	    </div>	
+	    <div class="container col-md-2"></div>
+	    <div class="container col-md-12">
+	    	<label class="center">Recipe</label>
+	    	<textarea id="recipeDescription" class="col-md-12" rows="10"></textarea>
+	    </div>
+	</div>   
+    
+    <div class="container col-md-11">
+    	<a id="saveButton" href="#" class="btn btn-info">
+    		<span class="glyphicon glyphicon-floppy-disk"></span>
+	    </a>
+    </div>
+    <div class="container col-md-1">
+    	<a id="deleteButton" href="#" class="btn btn-info">
+    		<span class="glyphicon glyphicon-trash"></span>
+    	</a>
+	</div>
+	
+	<div class="container col-md-12 center footer" style="margin-bottom:20px">
+	    <p>Powered by alarit!</p>
+	</div>
+
+</body>
+</html>
